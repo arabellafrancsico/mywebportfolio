@@ -1,0 +1,689 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #F5CBA7;
+    color: #4A2E2E;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/newbg.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 5px 5%;
+}
+.logo {
+    width: 200px; 
+    height: auto; 
+    margin-top: -20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns all content (logo + menu) to the left */
+    flex-wrap: wrap;
+    margin-top: -30px;
+}
+
+nav ul {
+    display: flex; /* Ensures `li` items are inline horizontally */
+    padding-left: 5px; /* Adds space between the logo and menu */
+}
+
+nav ul li {
+    list-style: none; /* Removes default bullet points */
+    margin: 0 10px; /* Adds spacing between menu items */
+    display: inline-block;
+}
+
+nav ul li a{
+    color: #4A2E2E;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 12%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 5px;
+}
+.header-text h1 span{
+    color: #F5F5F5;
+}
+/* -------------about1------------ */
+#about {
+    padding: 80px 0;
+    color:#4A2E2E
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allows the columns to wrap on smaller screens */
+    justify-content: space-between;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;  /* Makes the image responsive */
+    max-width: 500px;  /* Limits the max size of the image */
+    height: auto;  /* Ensures the aspect ratio is maintained */
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color:#4A2E2E;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; /* corrected from 're' to 'relative' */
+}
+
+.tab-links::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px o;
+}
+.tab-contents ul li span{
+    color:#FFFFF0;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* -------------about2------------ */
+#about {
+    padding: 80px 0;
+    color: #4A2E2E;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allows the columns to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center; /* Aligns content vertically */
+}
+
+.about-col-3 {
+    flex-basis: 50%; /* Adjust width for the text section */
+}
+.about-col-3 h2 {
+    font-size: 36px; /* Increases the font size */
+    font-weight: bold; /* Makes the title visually prominent */
+    text-align: center; /* Center-aligns the text */
+    color: #4A2E2E; /* Optional: Adds a custom color */
+    margin-bottom: 20px; /* Creates space between the title and the frame */
+}
+p {
+    margin-bottom: 20px; /* Adjust the value for more or less spacing */
+    line-height: 1.6;   /* Optional: Makes text easier to read */
+}
+.text-frame-bordered {
+    border: 3px dashed #4A2E2E; /* Dashed border with a unique color */
+    padding: 20px;             /* Space inside the border */
+    border-radius: 15px;       /* Rounded corners for a softer look */
+    max-width: 600px;          /* Limit the frame's width */
+    margin: 20px auto;         /* Center align the frame */
+    font-family: 'Arial', sans-serif; /* Clean and readable font */
+    line-height: 1.6;          /* Improve readability */
+    text-align: justify;       /* Align text for a polished appearance */
+    background-color: transparent; /* No fill; uses the page's background */
+}
+
+.text-frame-bordered p {
+    margin: 10px 0; /* Adds spacing between paragraphs */
+}
+
+.about-col-4 {
+    flex-basis: 35%; /* Adjust width for the image section */
+    text-align: right; /* Ensures the image aligns to the right */
+}
+
+.about-col-4 img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 500px; /* Limits the max size of the image */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 15px;
+}
+/* -------------gallery------------ */
+#Gallery{
+    padding: 50px 0;
+}
+.album-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Space between items */
+    margin-top: 50px;
+}
+.picture{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    transition: transform 0.5s;
+}
+.picture img {
+    width: 100%; /* Ensures the image fits the container width */
+    height: auto; /* Keeps the aspect ratio of the image */
+    max-height: 250px; /* Optional: Limits the height of images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 10px; /* Matches the parent container */
+    display: block;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 250, 250, 0.6), #6F4F37);   
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    color: #3E2723;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer a{
+    margin-top: 20px;
+    color: #6F4F37;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #FFFFFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.picture:hover img{
+    transform: scale(1.1);
+}
+.picture:hover .layer{
+    height: 100%;
+}
+/* -------------family gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------friends gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------bf gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------pet gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------food gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------travel gallery------------ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5CBA7; /* Use your main website background color */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6F4F37;
+    color: #fff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.picture {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.picture p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6F4F37;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* -------------contact me------------ */
+.contact-left{
+    flex-basis: 30%;
+}
+.contact-right{
+    flex-basis: -10%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #fff;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #4A2E2E;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #fff;
+    transform: translateY(-5px);
+}
+.btn {
+    display: inline-block; /* Makes it behave like a button */
+    padding: 10px 20px; /* Adds space inside the button */
+    background-color: #4A2E2E; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes the underline */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds the corners */
+    font-size: 16px; /* Adjusts text size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px
+}
+
+.btn:hover {
+    background-color: #3E2424; /* Slightly darker on hover */
+    color: #f8f9fa; /* Adjust text color on hover */
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #D2B29A;
+    padding: 15px;
+    margin: 15px 0;
+    color: #3E2424;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #D2B29A;
+    font-weight: 300;
+    margin-top: 20px;
+}
